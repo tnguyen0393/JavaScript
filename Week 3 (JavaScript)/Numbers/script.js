@@ -26,3 +26,27 @@ for (let i = 0; i < myArray.length; i++) {
 }
 
 alert(`Your total is ${sum}`);
+
+//Simple calculator
+let integerInput = prompt('Enter in a series of numbers for me to calculate');
+
+let theArray = integerInput.split(' ');
+console.log(theArray);
+let add = true;
+let total = 0;
+
+for (item of theArray) {
+  if (item === '+') {
+    add = true;
+  } else if (item === '-') {
+    add = false;
+  } else {
+    if (add) {
+      total += parseInt(item);
+    } else {
+      total -= parseInt(item);
+    }
+  }
+}
+
+console.log(total);
